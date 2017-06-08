@@ -1,0 +1,38 @@
+<div ng-show="blogCtrl.blogDetails">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{b.title}}</h3>
+					<p class="text-right">Created On:{{b.postDate.dayOfMonth}}/{{b.postDate.monthValue}}/{{b.postDate.year}}</p>
+				</div>
+				<div class="panel-body">
+					{{b.description}}
+				</div>
+				<div class="panel-footer">
+					<a href="#">
+						<span class="glyphicon glyphicon-thumbs-up"></span>Likes
+					</a>&nbsp;&nbsp;&nbsp;
+					<a href="#">
+						<span class="glyphicon glyphicon-eye-open"></span>
+						Views
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" ng-repeat="comment in selectedBlog.comments">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{b.title}}</h3>
+					<p class="text-right">Created On:{{b.postDate.dayOfMonth}}/{{b.postDate.monthValue}}/{{b.postDate.year}}</p>
+				</div>
+				<div class="panel-body">
+					{{b.description}}
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

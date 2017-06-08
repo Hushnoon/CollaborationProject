@@ -1,0 +1,72 @@
+<!--View All jobs-->
+<div ng-show="jobCtrl.allJobs">
+	<h1>ALL jobS</h1>
+	<div class="row" ng-repeat="b in jobCtrl.jobList">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{b.title}}</h3>
+					<p class="text-right">Posted On:{{b.postedOn}}</p>
+				</div>
+				<div class="panel-body">
+					<p><u><b>Job Description:&nbsp;</b></u>{{b.jobDesc}}</p>
+					<p><u><b>Job Requirement:&nbsp;</b></u>{{b.requirements}}</p>
+				</div>
+				<div class="panel-footer">
+					<a href class="btn btn-success" ng-click="jobCtrl.apply(b.jobId)">Apply</a>
+					<a href class="btn btn-info" ng-show="jobCtrl.isAdmin" ng-click="jobCtrl.manageCandidates(b.jobId)">View Candidates</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--View Applied Jobs-->
+<div ng-show="jobCtrl.applied">
+	<h1>Your Applied Requests</h1>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Applied No.</th>
+				<th>Job</th>
+				<th>Applied On</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="j in jobCtrl.appliedList">
+				<td>{{j.jobAppliedId}}</td>
+				<td>{{j.job.title}}</td>
+				<td>{{j.appliedDate}}</td>
+				<td>{{j.status}}</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+
+<!-- Candidates for a job -->
+<div ng-show="jobCtrl.candidates">
+	<h1>Applied Candidates</h1>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Applied No.</th>
+				<th>Name</th>
+				<th>Applied On</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="j in jobCtrl.candidateList">
+				<td>{{j.jobAppliedId}}</td>
+				<td>{{j.user.fullName}}</td>
+				<td>{{j.appliedDate}}</td>
+				<td>{{j.status}}</td>
+				<td><a href class="btn btn-warning"  ng-click="">View Profile</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>

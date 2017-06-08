@@ -1,0 +1,72 @@
+<div class="" style="background-color:white;">
+	<div class="row no-gutters" style="background-color:black;">
+		<div class="col-md-4 navbar-header">
+			<h1 style="color: white">e-CampusConnect</h1>
+		</div>
+		<div class="col-md-8 ">
+			<a href="/" class="btn btn-success navbar-btn pull-right">Login</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#!/register" class="btn btn-warning navbar-btn pull-right">Be A Member</a>
+		</div>
+	</div>
+	<!--body starts-->
+	<div class="row no-gutters">
+		<div class="col-md-6">
+			<img src="assets/images/background2.jpg" height="600px" width="600px">
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
+					<em><u><h3>WHY eCampusConnect</h3></u></em>
+					<p style="text-align:justify">
+						eCampusConnect is initiating with a campus connect program i.e. eCampusConnect Campus Connect to broaden the scope for students to get familiar with the practicality of industries; majorly emphasizing on building a strong foundation required in IT industries. It will basically connect students to the industry. 
+					</p>
+					<p style="text-align:justify">
+
+						In this program, a major glimpse of our routine work, future requirements, technologies used etc are updated on the website from where students could get to know about the industrial requisitions and they may update themselves accordingly. 
+					</p>
+					<p style="text-align:justify">
+						Also, Some of the sample practice test papers are made available to the students on the website from where they can prepare themselves for the recruitment process of eCampusConnect.
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="main-center main-shadow">LOGIN FOR STUDENT/STAFF</h4>
+					<div class="main-login main-center main-shadow" style="">
+						<form class="" method="post">
+							<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">Your Username</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<input ng-model="auathCtrl.user.userName" type="text" class="form-control" name="uname" id="uname"  placeholder="Enter your Name"/>
+									</div>
+								</div>
+							</div>
+								<div class="form-group">
+								<label for="password" class="cols-sm-2 control-label">Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<input ng-model="auathCtrl.user.password" type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" ng-required/>
+									</div>
+								</div>
+							</div>
+							<div class="form-group ">
+								<input type="submit"  id="button" class="btn btn-primary btn-lg btn-block login-button" value="Login" ng-click="auathCtrl.validateUser()"/>
+							</div>
+						</form>
+					</div>
+					<h5 class="main-center main-shadow"><a href="#!/register" style="color: white">FOR NEW USER !!!</a></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Footer starts-->
+	<div class="row">
+		<div class="col-md-12">
+			
+		</div>
+	</div>
+</div>

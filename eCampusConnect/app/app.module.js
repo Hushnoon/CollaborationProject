@@ -1,0 +1,1 @@
+var app=angular.module("collaborationApp",['ngRoute','BasicModule','UserModule','AuthenticationModule','BlogModule','JobModule']);

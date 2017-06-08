@@ -1,0 +1,56 @@
+<div ng-show="blogCtrl.blogDetail">
+	<h1>BLOG DETAIL</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{blogCtrl.selectedBlog.title}}</h3>
+					<p class="text-right">Created On:{{blogCtrl.selectedBlog.postDate.dayOfMonth}}/{{blogCtrl.selectedBlog.postDate.monthValue}}/{{blogCtrl.selectedBlog.postDate.year}}</p>
+				</div>
+				<div class="panel-body">
+					{{blogCtrl.selectedBlog.description}}
+				</div>
+				<div class="panel-footer">
+					<a href>By: {{blogCtrl.selectedBlog.user.fullName}}</a>&nbsp;&nbsp;&nbsp;
+					<a href="#">
+						<span class="glyphicon glyphicon-thumbs-up"></span>Likes
+					</a>&nbsp;&nbsp;&nbsp;
+					<a href="#">
+						<span class="glyphicon glyphicon-eye-open"></span>
+						Views
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--Show comments Section-->
+	<div class="row" ng-repeat="c in blogCtrl.commentList" >
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{c.user.userName}}</h3>
+					<p class="text-right">Commented On:{{c.commentDate.dayOfMonth}}/{{c.commentDate.monthValue}}/{{c.commentDate.year}}</p>
+				</div>
+				<div class="panel-body">
+					{{c.comments}}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Add Comment Section-->
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Add New Comment</h4>
+			<form>
+				<div class="form-group">
+					<label for="content">Description:</label>
+					<input type="textarea" class="form-control" id="content" ng-model="blogCtrl.comment.comments">
+				</div>
+
+				<a href class="btn btn-success" ng-click="blogCtrl.addComment()">ADD COMENT</a>
+			</form>
+		</div>
+	</div>
+</div>

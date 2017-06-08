@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title of the document</title>
+	<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+	<!---Bootstrap Styles-->
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<!--Custom css styles-->
+	<link rel="stylesheet" type="text/css" href="./assets/css/userTable.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/register.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/form-basic.css">
+</head>
+
+<body ng-app="collaborationApp">
+	
+	<div class="container">
+		<div ng-view></div>
+	</div>
+	<!--Custom Javascript Files-->
+	<script src="./app/app.module.js"></script>
+	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="./app/components/basic/BasicServices.js"></script>
+	<script src="./app/components/basic/BasicController.js"></script>
+	<script src="./app/components/user/UserServices.js"></script>
+	<script src="./app/components/user/UserController.js"></script>
+	<script src="./app/components/authentication/AuthenticationServices.js"></script>
+	<script src="./app/components/authentication/AuthenticationController.js"></script>
+	<script src="./app/components/blog/BlogService.js"></script>
+	<script src="./app/components/blog/BlogController.js"></script>
+	<script src="./app/components/job/JobService.js"></script>
+	<script src="./app/components/job/JobController.js"></script>
+	<script src="./app/app.route.js"></script>
+</body>
+
+</html>
