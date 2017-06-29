@@ -1,0 +1,17 @@
+<div ng-include src="'../app/navbar1.html'"></div>
+<div class="row" style="background-color: white;">
+	<div class="col-md-9">
+	<div ng-include src="'../app/components/event/newEvents.html'"></div>
+	<div ng-include src="'../app/components/event/viewEvents.html'"></div>
+	</div>
+	<div class="col-md-3">
+		<div class="list-group">
+			<a href="#" class="list-group-item active">
+				Quick Links
+			</a>
+			<a href class="list-group-item list-group-item-action" ng-click="eventCtrl.viewAllEvents()">View All Events</a>
+			
+			<a href class="list-group-item list-group-item-action" ng-show="eventCtrl.isAdmin" ng-click="eventCtrl.add()">Post New Event</a>
+		</div>
+	</div>
+</div>

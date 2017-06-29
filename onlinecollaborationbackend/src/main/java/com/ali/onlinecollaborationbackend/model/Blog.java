@@ -1,6 +1,6 @@
 package com.ali.onlinecollaborationbackend.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +15,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import oracle.sql.CLOB;
 
 @Entity
 @Table(schema="HUSH")
@@ -26,9 +27,10 @@ public class Blog {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int blogId;
 	private String title;
-	private String description;
-	private char status;
-	private LocalDate postDate;
+	
+	private CLOB description;
+	private String status;
+	private Date postDate;
 	private String reason;
 	@Column(name="votes")
 	private int likes;
@@ -54,19 +56,14 @@ public class Blog {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDescription() {
+	
+	
+	public CLOB getDescription() {
 		return description;
 	}
-	public void setDescription(String description) {
+	public void setDescription(CLOB description) {
 		this.description = description;
 	}
-	public char getStatus() {
-		return status;
-	}
-	public void setStatus(char status) {
-		this.status = status;
-	}
-	
 	public String getReason() {
 		return reason;
 	}
@@ -91,10 +88,17 @@ public class Blog {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public LocalDate getPostDate() {
+
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Date getPostDate() {
 		return postDate;
 	}
-	public void setPostDate(LocalDate postDate) {
+	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
 	}
 	public Set<BlogComment> getBlogComments() {

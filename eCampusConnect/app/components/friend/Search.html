@@ -1,0 +1,33 @@
+<div ng-include src="'../app/navbar1.html'"></div>
+<div class="row" style="background-color: white;" ng-init="frndCtrl.fetchUsers()">
+	<div class="col-md-12">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="u in frndCtrl.users|filter:frndCtrl.searchUser">
+					<td>{{u.fullName}}</td>
+					<td>{{u.userName}}</td>
+					<td>{{u.email}}</td>
+					<td><a class="btn btn-warning" href ng-if="u.userId!=frndCtrl.currentUser.userId" ng-click="frndCtrl.sendRequest(u)">Send Request</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- <div class="col-md-3">
+		<div class="list-group">
+			<a href="#" class="list-group-item active">
+				Quick Links
+			</a>
+			<a href="/friend" class="list-group-item list-group-item-action">View All friends</a>
+			<a href="/friendRequests" class="list-group-item list-group-item-action">View friend Requests</a>
+			<a href="/mySentRequests" class="list-group-item list-group-item-action">View Sent Request</a>
+		</div>
+	</div> -->
+</div>

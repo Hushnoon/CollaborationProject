@@ -30,11 +30,16 @@ public class UserController {
 	
 	// -------CREATE A USER
 	@PostMapping("/addUser")
-	public ResponseEntity<User> addUser(@RequestBody User user) {
-		user.setStatus('y');
-		user.setIsOnline('n');
-		userDao.add(user);
-		return new ResponseEntity<User>(user, HttpStatus.CREATED);
+	public ResponseEntity<Void> addUser(@RequestBody User user) {
+		System.out.println("Controller Value :"+user.getStatus());
+		if(userDao.add(user))
+		{
+			return new ResponseEntity<Void>(HttpStatus.OK);
+		}
+		else
+		{
+			return new ResponseEntity<Void>(HttpStatus.EXPECTATION_FAILED);
+		}
 	}
 
 	// --------LIST USERS
@@ -52,17 +57,15 @@ public class UserController {
 	}
 
 	// --------Update A SINGLE USER BY ID
-	@PutMapping("/user/{id}")
-	public ResponseEntity<User> updateUser(@PathVariable("id") int id, @RequestBody User user) {
-		User currentUser = userDao.getUserById(id);
-		if (currentUser == null) {
+	@PutMapping("/changeUser")
+	public ResponseEntity<User> updateUser(@RequestBody User user) {
+		if(userDao.update(user))
+		{
+			return new ResponseEntity<User>(user,HttpStatus.OK);
+		}
+		else
+		{
 			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-		} else {
-			currentUser.setFullName(user.getFullName());
-			currentUser.setUserName(user.getUserName());
-			currentUser.setEmail(user.getEmail());
-			userDao.update(currentUser);
-			return new ResponseEntity<User>(currentUser, HttpStatus.OK);
 		}
 	}
 

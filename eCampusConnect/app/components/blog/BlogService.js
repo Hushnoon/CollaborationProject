@@ -69,4 +69,21 @@ BlogModule.service('BlogService', ['$http','$q','RESTURI',function($http,$q,REST
 			});
 		return deferred.promise;
 	}
+	this.updateBlog=function(blog)
+	{
+		console.log('Update blog service');
+		var deferred=$q.defer();
+		$http.post(RESTURI+'/updateblog',blog)
+		.then(
+			function(response){
+				console.log(response);
+				deferred.resolve(response);
+			},
+			function(error)
+			{
+				console.log('Error');
+				deferred.reject(error);
+			});
+		return deferred.promise;
+	}
 }])

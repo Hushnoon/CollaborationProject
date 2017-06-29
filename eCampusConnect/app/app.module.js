@@ -1,1 +1,1 @@
-var app=angular.module("collaborationApp",['ngRoute','BasicModule','UserModule','AuthenticationModule','BlogModule','JobModule']);
+var app=angular.module("collaborationApp",['ngRoute','ngCookies','NavModule','BasicModule','UserModule','AuthenticationModule','BlogModule','JobModule','EventModule','FriendModule','ChatModule']);

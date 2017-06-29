@@ -17,25 +17,24 @@ public class User {
 	private String fullName;
 	@Column(unique=true)
 	private String userName;
-	
 	@Column(unique=true)
 	private String email;
 	private String password;
 	private String role;
-	private char isOnline;
-	private char status;
+	private Boolean isOnline;
+	private String status;
 	
-	
-	public char getIsOnline() {
+	public Boolean getIsOnline() {
 		return isOnline;
 	}
-	public void setIsOnline(char isOnline) {
+	public void setIsOnline(Boolean isOnline) {
 		this.isOnline = isOnline;
 	}
-	public char getStatus() {
+
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(char status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public int getUserId() {

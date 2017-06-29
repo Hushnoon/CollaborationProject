@@ -1,0 +1,79 @@
+
+<div ng-show="frndCtrl.showList" ng-init="frndCtrl.getFriends()">
+	<h1><U><i>YOUR FRIENDS</i></U></h1>
+	<div class="row">
+		<div class="col-md-3" ng-repeat="f in frndCtrl.frndList">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<b>{{f.friend.fullName}}</b>
+					<span class="badge" style="background-color: green;" ng-show="f.friend.isOnline">Online</span>
+					<span class="badge" ng-hide="f.friend.isOnline">Offline</span>
+				</div>
+				<div class="panel-footer">
+
+					<a class="btn btn-danger" href ng-click="frndCtrl.deleteRequest(f)">Delete</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Friend Requests-->
+<div ng-show="frndCtrl.showRequests">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="u in frndCtrl.requestList|filter:{status:'new'}">
+						<td>{{u.friend.fullName}}</td>
+						<td>{{u.friend.userName}}</td>
+						<td>{{u.friend.email}}</td>
+						<td>
+							<a class="btn btn-success" href ng-click="frndCtrl.confirmRequest(u)">Confirm</a>
+						</td>
+						<td>
+							<a class="btn btn-info" href ng-click="frndCtrl.rejectRequest(u)">Reject</a>
+						</td>
+						<td>
+							<a class="btn btn-danger" href ng-click="frndCtrl.deleteRequest(u)">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- Friend My Requests -->
+<div ng-show="frndCtrl.showMyRequests">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="u in frndCtrl.sentList|filter:{status:'new'}">
+				<td>{{u.friend.fullName}}</td>
+				<td>{{u.friend.userName}}</td>
+				<td>{{u.friend.email}}</td>
+				<td>{{u.status}}</td>
+				<td>
+					<a class="btn btn-danger" href ng-click="frndCtrl.deleteRequest(u)">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

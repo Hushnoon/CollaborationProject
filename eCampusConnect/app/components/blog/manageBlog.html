@@ -1,0 +1,28 @@
+<div ng-show="blogCtrl.showManage">
+	<h1>NEW BLOGS TO APPROVE</h1>
+	<div class="row" ng-repeat="b in blogCtrl.newBlogList|filter:{status:'new'}">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{b.title}}</h3>
+					<p class="text-left">Created By:{{b.user.userName}}</p><p class="text-right">Created On:{{b.postDate}}</p>
+				</div>
+				<div class="panel-body">
+					{{b.description}}
+				</div>
+				<div class="panel-footer">
+					<label for="title">Reason if rejection:</label>
+					<input type="text" class="form-control" id="title" ng-model="b.reason">
+					<a href class="btn btn-success" ng-click="blogCtrl.accept(b)">
+						<span class="glyphicon glyphicon-ok"></span>Accept
+					</a>&nbsp;&nbsp;&nbsp;
+					<a href class="btn btn-danger"  ng-click="blogCtrl.reject(b)">
+						<span class="glyphicon glyphicon-remove"></span>
+						Reject
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

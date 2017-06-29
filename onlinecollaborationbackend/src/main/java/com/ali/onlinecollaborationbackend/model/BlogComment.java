@@ -1,6 +1,6 @@
 package com.ali.onlinecollaborationbackend.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(schema="HUSH")
@@ -25,8 +24,14 @@ public class BlogComment {
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	private User user;
 	private String comments;
-	private LocalDate commentDate;
+	private Date commentDate;
 	
+	public Date getCommentDate() {
+		return commentDate;
+	}
+	public void setCommentDate(Date commentDate) {
+		this.commentDate = commentDate;
+	}
 	public int getBlogCommentId() {
 		return blogCommentId;
 	}
@@ -51,12 +56,7 @@ public class BlogComment {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
-	public LocalDate getCommentDate() {
-		return commentDate;
-	}
-	public void setCommentDate(LocalDate commentDate) {
-		this.commentDate = commentDate;
-	}
+	
 	
 	
 }

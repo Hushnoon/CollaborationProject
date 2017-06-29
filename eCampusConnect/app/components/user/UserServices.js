@@ -19,7 +19,6 @@ UserModule.service('UserService', ['$http','$q','RESTURI', function($http,$q,RES
 
 	this.addUser=function(user){
 		console.log("service:");
-		user.role='GUEST';
 		console.log(user);
 		var deferred=$q.defer();
 		$http.post(RESTURI+'/addUser',user)

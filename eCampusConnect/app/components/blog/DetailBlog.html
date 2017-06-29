@@ -5,7 +5,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{blogCtrl.selectedBlog.title}}</h3>
-					<p class="text-right">Created On:{{blogCtrl.selectedBlog.postDate.dayOfMonth}}/{{blogCtrl.selectedBlog.postDate.monthValue}}/{{blogCtrl.selectedBlog.postDate.year}}</p>
+					<p class="text-right">Created On:{{blogCtrl.selectedBlog.postDate}}</p>
 				</div>
 				<div class="panel-body">
 					{{blogCtrl.selectedBlog.description}}
@@ -30,7 +30,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{c.user.userName}}</h3>
-					<p class="text-right">Commented On:{{c.commentDate.dayOfMonth}}/{{c.commentDate.monthValue}}/{{c.commentDate.year}}</p>
+					<p class="text-right">Commented On:{{c.commentDate}}</p>
 				</div>
 				<div class="panel-body">
 					{{c.comments}}

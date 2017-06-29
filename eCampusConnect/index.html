@@ -5,6 +5,7 @@
 	<title>Title of the document</title>
 	<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="./bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="./bower_components/angular-cookies/angular-cookies.js"></script>
 	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
 	<!---Bootstrap Styles-->
 	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
@@ -22,18 +23,38 @@
 		<div ng-view></div>
 	</div>
 	<!--Custom Javascript Files-->
+	
 	<script src="./app/app.module.js"></script>
 	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="./bower_components/sockjs/sockjs.js"></script>
+	<script type="text/javascript" src="./bower_components/stomp-websocket/lib/stomp.js"></script>
+	<script type="text/javascript" src="./bower_components/lodash/dist/lodash.js"></script>
+	<!--Basic-->
 	<script src="./app/components/basic/BasicServices.js"></script>
 	<script src="./app/components/basic/BasicController.js"></script>
+	<!--User-->
 	<script src="./app/components/user/UserServices.js"></script>
 	<script src="./app/components/user/UserController.js"></script>
+	<!--Authentication-->
 	<script src="./app/components/authentication/AuthenticationServices.js"></script>
 	<script src="./app/components/authentication/AuthenticationController.js"></script>
+	<!--Blog-->
 	<script src="./app/components/blog/BlogService.js"></script>
 	<script src="./app/components/blog/BlogController.js"></script>
+	<!--Job-->
 	<script src="./app/components/job/JobService.js"></script>
 	<script src="./app/components/job/JobController.js"></script>
+	<!--Event-->
+	<script src="./app/components/event/EventService.js"></script>
+	<script src="./app/components/event/EventController.js"></script>
+	
+	<!--Friend-->
+	<script src="./app/components/friend/FriendService.js"></script>
+	<script src="./app/components/friend/FriendController.js"></script>
+	<!--Chat-->
+	<script src="./app/components/chat/ChatService.js"></script>
+	<script src="./app/components/chat/ChatController.js"></script>
+	<!--Angular route-->
 	<script src="./app/app.route.js"></script>
 </body>
 

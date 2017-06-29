@@ -17,4 +17,16 @@ AuthenticationModule.service('AuthenticationService', ['$http','$q','RESTURI', f
 			});
 		return deferred.promise
 	}
+	this.makeOnline=function(user){
+		var deferred=$q.defer();
+		$http.put(RESTURI+'/changeUser',user).then(
+			function(response){
+				deferred.resolve(response.data);
+			},
+			function(error){
+				
+				deferred.reject(error);
+			});
+		return deferred.promise
+	}
 }])

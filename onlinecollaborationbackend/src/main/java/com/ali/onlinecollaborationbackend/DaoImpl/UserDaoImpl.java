@@ -33,6 +33,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public boolean add(User user) {
+		System.out.println("DaoImpl Value :"+user.getStatus());
 		try {
 			sessionFactory.getCurrentSession().save(user);
 			return true;

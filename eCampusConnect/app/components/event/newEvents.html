@@ -1,0 +1,34 @@
+<div class="row" ng-show="eventCtrl.newEvent">
+  <div class="col-md-12">
+    <h3><u>Add New Event</u></h3>
+    <form>
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" ng-model="eventCtrl.event.name">
+      </div>
+      <div class="form-group">
+        <label for="content">Description:</label>
+        <textarea rows="6"  class="form-control" id="content" ng-model="eventCtrl.event.eventDesc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="venue">Venue:</label>
+        <input type="text" class="form-control" id="venue" ng-model="eventCtrl.event.venue">
+      </div>
+      <a href class="btn btn-success" ng-click="eventCtrl.save()">Add Event</a>
+    </form>
+
+  </div>
+</div>
+
+<div class="row" ng-show="eventCtrl.uploadImge">
+  <div class="col-md-12">
+    <form action="http://localhost:12080/onlinecollaborationbackend/rest/file/upload" method="post" enctype="multipart/form-data">
+
+     <p>
+    Select a file : <input type="file" name="file" size="45" style="font-face: 'Comic Sans MS'; font-size: larger; color: teal; background-color: #00FFFF; border: 3pt ridge lightgrey"/>
+     </p>
+
+     <input type="submit" value="Upload It" style="font-face: 'Comic Sans MS'; font-size: larger; color: teal; background-color: #FFFFC0; border: 3pt ridge lightgrey"/>
+  </form>
+  </div>
+</div>

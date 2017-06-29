@@ -1,30 +1,25 @@
-UserModule.controller('UserController', ['UserService','$scope','$location', function(UserService,$scope,$location){
+UserModule.controller('UserController', ['UserService','$scope','$rootScope','$location',function(UserService,$scope,$rootScope,$location){
 	var me=this;
 	me.user={};
 	me.updateShow=true;
 	me.selectedUser={};
+	me.loggedIn=false;
 	var refresh=function(){
-
-		UserService.getUsers().then(
-			function(users)
-			{
-				me.users=users;
-			},
-			function(error){
-				console.log(error);
-			});
+			me.user=$rootScope.currentUser;
 	}
 
 	refresh();
 
 	me.addUser=function(){
 		console.log(me.user);
-
+		me.user.role="Guest";
+		me.user.isOnline=false;
+		me.user.status="new";
 		UserService.addUser(me.user).then(
 			function(response)
 			{
 				console.log(response.data);
-				$location.path('/user');
+				$location.path('/login');
 			},
 			function(error){
 				console.log(error);

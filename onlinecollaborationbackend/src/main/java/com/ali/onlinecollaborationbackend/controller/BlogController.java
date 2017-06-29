@@ -1,6 +1,8 @@
 package com.ali.onlinecollaborationbackend.controller;
 
+import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +35,8 @@ public class BlogController {
 
 	@PostMapping("/addblog")
 	public ResponseEntity<Blog> addBlog(@RequestBody Blog blog) {
-		System.out.println(LocalDate.now());
-		blog.setPostDate(LocalDate.now());
+		blog.setPostDate(new Date(Calendar.getInstance().getTime().getTime()));
+		blog.setStatus("new");
 		blogDao.addBlog(blog);
 		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 	}
@@ -75,18 +77,20 @@ public class BlogController {
 	}
 
 	@PutMapping("/updateblog")
-	public ResponseEntity<Blog> updateBlog(@RequestBody Blog blog) {
-		blogDao.updateBlog(blog);
-		return new ResponseEntity<Blog>(blog, HttpStatus.OK);
+	public ResponseEntity<Void> updateBlog(@RequestBody Blog blog) {
+		if (blogDao.updateBlog(blog))
+			return new ResponseEntity<Void>(HttpStatus.OK);
+		else
+			return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
 	}
 
 	@PostMapping("/blog/add/comment")
 	public ResponseEntity<Void> addComment(@RequestBody BlogComment blogComment) {
-		Blog blog=blogDao.getById(blogComment.getBlog().getBlogId());
-		//User user=userDao.getUserById(blogComment.getUser().getUserId());
+		Blog blog = blogDao.getById(blogComment.getBlog().getBlogId());
+		// User user=userDao.getUserById(blogComment.getUser().getUserId());
 		blogComment.setBlog(blog);
-		//blogComment.setUser(user);
-		blogComment.setCommentDate(LocalDate.now());
+		// blogComment.setUser(user);
+		blogComment.setCommentDate(new Date(Calendar.getInstance().getTime().getTime()));
 		if (blogCommentDao.saveComment(blogComment)) {
 			return new ResponseEntity<Void>(HttpStatus.OK);
 		} else {

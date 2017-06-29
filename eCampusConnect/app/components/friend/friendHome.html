@@ -1,0 +1,16 @@
+<div ng-include src="'../app/navbar1.html'"></div>
+<div class="row" style="background-color: white;" ng-init="frndCtrl.fetchUsers()">
+	<div class="col-md-9">
+		<div ng-include src="'../app/components/friend/friendList.html'"></div>
+	</div>
+	<div class="col-md-3">
+		<div class="list-group">
+			<a href="#" class="list-group-item active">
+				Quick Links
+			</a>
+			<a href class="list-group-item list-group-item-action" ng-click="frndCtrl.getFriends()">View All friends</a>
+			<a href class="list-group-item list-group-item-action" ng-click="frndCtrl.getFrndRequest()">View friend Requests</a>
+			<a href class="list-group-item list-group-item-action" ng-click="frndCtrl.getSentRequest()">View Sent Request</a>
+		</div>
+	</div>
+</div>

@@ -1,12 +1,12 @@
 <!--View All Blogs-->
 <div ng-show="blogCtrl.allBlogs">
 	<h1>ALL BLOGS</h1>
-	<div class="row" ng-repeat="b in blogCtrl.blogList">
+	<div class="row" ng-repeat="b in blogCtrl.blogList|filter:{status:'confirm'}">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{b.title}}</h3>
-					<p class="text-right">Created On:{{b.postDate.dayOfMonth}}/{{b.postDate.monthValue}}/{{b.postDate.year}}</p>
+					<p class="text-right">Created On:{{b.postDate}}</p>
 				</div>
 				<div class="panel-body">
 					{{b.description}}
@@ -34,7 +34,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{b.title}}</h3>
-					<p class="text-right">Created On:{{b.postDate.dayOfMonth}}/{{b.postDate.monthValue}}/{{b.postDate.year}}</p>
+					<p class="text-right">Created On:{{b.postDate}}</p>
 				</div>
 				<div class="panel-body">
 					{{b.description}}

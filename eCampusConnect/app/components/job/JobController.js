@@ -36,7 +36,7 @@ JobModule.controller('JobController', ['JobService','$http','$scope','$rootScope
 		me.newJob=false;
 		me.applied=false;
 		me.candidates=false;
-		if($rootScope.role=='ADMIN')
+		if($rootScope.currentUser.role=='ADMIN')
 		{
 			me.isAdmin=true;
 		}

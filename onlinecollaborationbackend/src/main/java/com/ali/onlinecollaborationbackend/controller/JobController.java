@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ali.onlinecollaborationbackend.Dao.JobAppliedDao;
 import com.ali.onlinecollaborationbackend.Dao.JobDao;
 import com.ali.onlinecollaborationbackend.Dao.UserDao;
-import com.ali.onlinecollaborationbackend.model.Blog;
 import com.ali.onlinecollaborationbackend.model.Job;
 import com.ali.onlinecollaborationbackend.model.JobApplied;
 

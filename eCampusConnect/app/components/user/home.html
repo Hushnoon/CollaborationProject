@@ -9,53 +9,59 @@
 
 	.homemain
 	{
-		background-color: white;
+		background-color:white;
+		padding-top: 10px;
+	}
+
+
+	.custom-bullet li {
+		display: block;
+	}
+
+	.custom-bullet li:before
+	{
+		/*Using a Bootstrap glyphicon as the bullet point*/
+		content: "\e080";
+		font-family: 'Glyphicons Halflings';
+		font-size: 9px;
+		float: left;
+		margin-top: 4px;
+		margin-left: -17px;
+		color: #CCCCCC;
 	}
 </style>
 
-	<div ng-include src="'../app/navbar.html'"></div>
+<div ng-include src="'../app/navbar1.html'"></div>
 <!-- <br>	
 	<br>	 -->
 	<div class="row homemain">
 		<div class="col-md-3">
-			<div class="row">
-				<div class="col-md-12">
-					ghjg		
+			<div class="panel panel-primary">
+				<div class="panel-heading">Welcome {{userCtrl.user.userName}}</div>
+				<div class="panel-body">
+					<ul class="custom-bullet">
+						<li><b>Name:&nbsp;</b>{{userCtrl.user.fullName}}</li>
+						<li><b>Email:&nbsp;</b>{{userCtrl.user.email}}</li>
+						
+					</ul>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					gygygt
-				</div>
+				<div class="panel-footer">Panel Footer</div>
 			</div>
 		</div>
 		<div class="col-md-9">
-			<div class="col-md-6">	
+			<div class="col-md-3">	
 				<a href="#!/blog"><img src="assets/images/rsz_blogicon.jpg" alt=""></a>
 			</div>
-			<div class="col-md-6">	
+			<div class="col-md-3">	
 				<a href=""><img src="assets/images/rsz_forum-icon.png" alt=""></a>
 			</div>
-			<div class="col-md-6">	
-				<a href=""><img src="assets/images/events.png" alt=""></a>
+			<div class="col-md-3">	
+				<a href="#!/event"><img src="assets/images/events.png" alt=""></a>
 			</div>
-			<div class="col-md-6">	
+			<div class="col-md-3">	
 				<a href="#!/job"><img src="assets/images/rsz_jobs.png" alt=""></a>
 			</div>
-			<!-- <ul>\
-				<li>
-					
-				</li>
-				<li>
-					
-				</li>
-				<li>
-					
-				</li>
-				<li>
-					
-				</li>
-			</ul> -->
+			
 		</div>
 	<!-- <div class="col-md-3">
 		

@@ -6,14 +6,16 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.ali.onlinecollaborationbackend.CORSFilter;
 import com.ali.onlinecollaborationbackend.config.HibernateConfig;
+import com.ali.onlinecollaborationbackend.config.ImageUploadApplication;
 import com.ali.onlinecollaborationbackend.config.MvcConfig;
+import com.ali.onlinecollaborationbackend.config.WebSocketConfig;
 
 public class MvcWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
         //give all application related config class name
-    	return new Class[] {HibernateConfig.class};
+    	return new Class[] {HibernateConfig.class,ImageUploadApplication.class,WebSocketConfig.class};
     }
 
     @Override
