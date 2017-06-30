@@ -73,7 +73,7 @@ BlogModule.service('BlogService', ['$http','$q','RESTURI',function($http,$q,REST
 	{
 		console.log('Update blog service');
 		var deferred=$q.defer();
-		$http.post(RESTURI+'/updateblog',blog)
+		$http.put(RESTURI+'/updateblog',blog)
 		.then(
 			function(response){
 				console.log(response);

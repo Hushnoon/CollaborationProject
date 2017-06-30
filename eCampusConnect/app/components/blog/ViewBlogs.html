@@ -6,7 +6,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{b.title}}</h3>
-					<p class="text-right">Created On:{{b.postDate}}</p>
+					<p class="text-right"><b>Created On</b>:{{b.postDate}}</p>
 				</div>
 				<div class="panel-body">
 					{{b.description}}
@@ -16,10 +16,10 @@
 					<a href="#">
 						<span class="glyphicon glyphicon-thumbs-up"></span>Likes
 					</a>&nbsp;&nbsp;&nbsp;
-					<a href="#">
+					<!-- <a href="#">
 						<span class="glyphicon glyphicon-eye-open"></span>
 						Views
-					</a>
+					</a> -->
 				</div>
 			</div>
 		</div>
@@ -34,22 +34,21 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">{{b.title}}</h3>
-					<p class="text-right">Created On:{{b.postDate}}</p>
+					<p class="text-right">Created On:{{b.postDate}}|&nbsp;&nbsp;<b>Status:</b>{{b.status}}</p>
 				</div>
 				<div class="panel-body">
 					{{b.description}}
 				</div>
 				<div class="panel-footer">
-					<a href ><span class="glyphicon glyphicon-comment"></span>Comments</a>&nbsp;&nbsp;&nbsp;
+			</div>		<a href ><span class="glyphicon glyphicon-comment"></span>Comments</a>&nbsp;&nbsp;&nbsp;
 					<a href="#">
 						<span class="glyphicon glyphicon-thumbs-up"></span>Likes
 					</a>&nbsp;&nbsp;&nbsp;
-					<a href="#">
+					<!-- <a href="#">
 						<span class="glyphicon glyphicon-eye-open"></span>
 						Views
-					</a>
+					</a> -->
 				</div>
 			</div>
 		</div>
 	</div>
-</div>

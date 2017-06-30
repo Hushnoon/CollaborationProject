@@ -11,13 +11,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import oracle.sql.CLOB;
+
 
 @Entity
 @Table(schema="HUSH")
@@ -27,8 +28,8 @@ public class Blog {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int blogId;
 	private String title;
-	
-	private CLOB description;
+	@Lob
+	private String description;
 	private String status;
 	private Date postDate;
 	private String reason;
@@ -58,10 +59,10 @@ public class Blog {
 	}
 	
 	
-	public CLOB getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(CLOB description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	public String getReason() {

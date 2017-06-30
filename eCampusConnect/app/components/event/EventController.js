@@ -4,7 +4,7 @@ EventModule.controller('EventController', ['EventService','$http','$scope','$roo
 	me.events=true;
 	me.uploadImge=false;
 	me.isAdmin=false;
-	if($rootScope.currentUser.role=='ADMIN'){
+	if($rootScope.currentUser.role=='Admin'){
 		me.isAdmin=true;
 	}
 	me.add=function()

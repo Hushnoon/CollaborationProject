@@ -44,7 +44,6 @@ public class BlogController {
 	@GetMapping("/getallblog")
 	public ResponseEntity<List<Blog>> getAllBlog() {
 		List<Blog> getallblogs = blogDao.getAllBlog();
-
 		return new ResponseEntity<List<Blog>>(getallblogs, HttpStatus.OK);
 	}
 
@@ -56,7 +55,8 @@ public class BlogController {
 
 			return new ResponseEntity<Blog>(blg, HttpStatus.NOT_FOUND);
 		} else {
-
+			String s=new String(blog.getDescription().getBytes());
+			System.out.println("Clob data"+s);
 			return new ResponseEntity<Blog>(blog, HttpStatus.OK);
 		}
 	}

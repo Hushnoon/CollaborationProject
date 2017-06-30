@@ -113,7 +113,7 @@ BlogModule.controller('BlogController', ['BlogService','$http','$scope','$rootSc
 	{
 		console.log('blog data:'+blog);
 		blog.status='confirm';
-		BlogService.update(blog)
+		BlogService.updateBlog(blog)
 		.then(function(data){
 			me.viewAllBlogsForAdmin();
 			alert('Successfully Updated');
@@ -125,7 +125,7 @@ BlogModule.controller('BlogController', ['BlogService','$http','$scope','$rootSc
 	me.reject=function(blog)
 	{
 		blog.status='reject';
-		BlogService.update(blog)
+		BlogService.updateBlog(blog)
 		.then(function(data){
 			me.viewAllBlogsForAdmin();
 			alert('Successfully Updated');
