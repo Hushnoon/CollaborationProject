@@ -84,6 +84,11 @@ app.run(function($rootScope,$cookieStore,$http,$location)
 var NavModule=angular.module('NavModule', []);
 NavModule.controller('NavController',['$scope','$rootScope','$cookieStore','$location','$http','RESTURI',function($scope,$rootScope,$cookieStore,$location,$http,RESTURI){
 	console.log('nav controller loaded');
+	$scope.isAdmin=false;
+	if($rootScope.currentUser.role=="Admin")
+	{
+		$scope.isAdmin=true;
+	}
 	$scope.logout=function(){
 		console.log('logout been called');
 		console.log($rootScope.currentUser);

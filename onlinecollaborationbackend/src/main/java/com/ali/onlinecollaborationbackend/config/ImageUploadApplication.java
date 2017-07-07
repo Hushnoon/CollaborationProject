@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
 
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
-@ApplicationPath("rest")
+@ApplicationPath("/rest")
 public class ImageUploadApplication extends Application {
 
 	@Override

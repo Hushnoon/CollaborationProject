@@ -6,6 +6,14 @@ UserModule.controller('UserController', ['UserService','$scope','$rootScope','$l
 	me.loggedIn=false;
 	var refresh=function(){
 			me.user=$rootScope.currentUser;
+			UserService.getUsers().then(
+				function(data){
+					me.users=data;
+				},
+				function(error){
+					alert('Some technical error try later!!!');
+				}
+				);
 	}
 
 	refresh();
@@ -47,15 +55,17 @@ UserModule.controller('UserController', ['UserService','$scope','$rootScope','$l
 	me.editUser=function(user){
 		console.log("edit user1");
 		me.updateShow=false;
-		me.selectedUser.userId=user.userId;
+		me.selectedUser=user;
+		/*me.selectedUser.userId=user.userId;
 		me.selectedUser.fullName=user.fullName;
 		me.selectedUser.userName=user.userName;
 		me.selectedUser.email=user.email;
-		me.selectedUser.role=user.role;
+		me.selectedUser.role=user.role;*/
 	}
 
 	me.updateUser=function(){
 		console.log("update User");
+		console.log(me.selectedUser);
 		UserService.updateUser(me.selectedUser).then(
 			function(response)
 			{

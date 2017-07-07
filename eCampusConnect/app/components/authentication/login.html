@@ -5,7 +5,7 @@
 		</div>
 		<div class="col-md-8 ">
 			<a href="/" class="btn btn-success navbar-btn pull-right">Login</a>
-				&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="#!/register" class="btn btn-warning navbar-btn pull-right">Be A Member</a>
 		</div>
 	</div>
@@ -35,6 +35,7 @@
 					<h4 class="main-center main-shadow">LOGIN FOR STUDENT/STAFF</h4>
 					<div class="main-login main-center main-shadow" style="">
 						<form class="" method="post">
+							<h5 ng-show="auathCtrl.isNew" style="color:Red;">You can login once registration get  confirmed by admin!!!</h5>
 							<div class="form-group">
 								<label for="name" class="cols-sm-2 control-label">Your Username</label>
 								<div class="cols-sm-10">
@@ -44,7 +45,7 @@
 									</div>
 								</div>
 							</div>
-								<div class="form-group">
+							<div class="form-group">
 								<label for="password" class="cols-sm-2 control-label">Password</label>
 								<div class="cols-sm-10">
 									<div class="input-group">

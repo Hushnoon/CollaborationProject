@@ -1,4 +1,4 @@
-EventModule.controller('EventController', ['EventService','$http','$scope','$rootScope', function(EventService,$scope,$rootScope){
+EventModule.controller('EventController', ['EventService','$scope','$rootScope','$http',function(EventService,$scope,$rootScope,$http){
 	var me=this;
 	me.newEvent=false;
 	me.events=true;
@@ -27,4 +27,24 @@ EventModule.controller('EventController', ['EventService','$http','$scope','$roo
 			console.log(error);
 		});
 	}
+	me.continueFileUpload=function (){
+		var uploadUrl='http://localhost:12080/onlinecollaborationbackend/fileupload';
+		var formData=new FormData();
+		formData.append("file",file.files[0]);
+		$http({
+			method: 'POST',
+			url: uploadUrl,
+			headers: {'Content-Type': undefined},
+			data: formData,
+			transformRequest: function(data, headersGetterFunction) {
+				return data;
+			}
+		})
+		.then(function(response) {   
+			alert("success");
+		},function(error){
+			alert('error');
+		})
+
+	};
 }])

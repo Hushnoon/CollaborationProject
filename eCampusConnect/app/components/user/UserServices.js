@@ -51,7 +51,7 @@ UserModule.service('UserService', ['$http','$q','RESTURI', function($http,$q,RES
 		console.log("update service:");
 		//console.log(user);
 		var deferred=$q.defer();
-		$http.put(RESTURI+'/user/'+user.userId,user)
+		$http.put(RESTURI+'/changeUser',user)
 		.then(
 			function(respopnse){
 				deferred.resolve(respopnse.data);

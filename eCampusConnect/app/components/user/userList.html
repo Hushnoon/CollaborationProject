@@ -8,48 +8,54 @@
 
     <div class="form-row">
       <label>
-        <span>Full name</span>
-        <input type="text" name="name" ng-model="userCtrl.selectedUser.fullName">
+        <span>Full Name</span>
+        <input type="text" name="name" ng-model="userCtrl.selectedUser.fullName" disabled/>
       </label>
     </div>
 
+    <div class="form-row">
+      <label>
+        <span>User Name</span>
+        <input type="text" name="email" ng-model="userCtrl.selectedUser.userName" disabled="">
+      </label>
+    </div>
     <div class="form-row">
       <label>
         <span>Email</span>
-        <input type="email" name="email" ng-model="userCtrl.selectedUser.email">
+        <input type="email" name="email" ng-model="userCtrl.selectedUser.email" disabled>
       </label>
     </div>
-<!-- 
-    <div class="form-row">
-      <label>
-        <span>Dropdown</span>
-        <select name="dropdown">
-          <option>Option One</option>
-          <option>Option Two</option>
-          <option>Option Three</option>
-          <option>Option Four</option>
-        </select>
-      </label>
-    </div> -->
 
     <div class="form-row">
+      <label>
+      <span>Status</span>
+        <select name="dropdown" ng-model="userCtrl.selectedUser.status">
+          <option>confirm</option>
+          <option>reject</option>
+      
+        </select>
+      </label>
+    </div>
+    
+    <div class="form-row">
       <!-- <input type="submit" value="Update User" class="btn btn-sm btn-success"/> -->
-       <button type="submit" class="btn btn-sm btn-success" ng-click="userCtrl.updateUser()">Update User</button>
+      <button type="submit" class="btn btn-sm btn-success" ng-click="userCtrl.updateUser()">Update User</button>
     </div>
 
   </form>
 
   <br/> 
+
   <!--Panel to display all users-->
   
-  <div class="panel panel-default user-table">
+  <div class="panel panel-default user-table" ng-show="userCtrl.updateShow">
     <div class="panel-heading">
       <div class="row">
         <div class="col col-xs-6">
           <h3 class="panel-title">ALL USER DETAILS</h3>
         </div>
         <div class="col col-xs-6 text-right">
-          <a href="#!/register" class="btn btn-sm btn-primary btn-create" >Register</a>
+          <a href="#!/home" class="btn btn-sm btn-primary btn-create" >Home</a>
         </div>
       </div>
     </div>
@@ -62,24 +68,26 @@
             <th>UserName</th>
             <th>Email</th>
             <th>Role</th>
+            <th>Status</th>
           </tr> 
         </thead>
         <tbody>
           <tr ng-repeat="user in userCtrl.users">
             <td align="center">
-              <a class="btn btn-default"><em class="fa fa-pencil" ng-click="userCtrl.editUser(user)"></em></a>
+              <a class="btn btn-default" ng-click="userCtrl.editUser(user)"><em class="fa fa-pencil"></em></a>
               <a class="btn btn-danger" ng-click="userCtrl.deleteUser(user)"><em class="fa fa-trash"></em></a>
             </td>
             <td class="hidden-xs">{{user.fullName}}</td>
             <td>{{user.userName}}</td>
             <td>{{user.email}}</td>
             <td>{{user.role}}</td>
+            <td>{{user.status}}</td>
           </tr>
         </tbody>
       </table>
 
     </div>
-    <div class="panel-footer">
+<!--     <div class="panel-footer">
       <div class="row">
         <div class="col col-xs-4">Page 1 of 5
         </div>
@@ -98,7 +106,7 @@
         </div>
       </div>
     </div>
-    <!--footer ends-->
+     -->    <!--footer ends-->
   </div>
 
 </div>
